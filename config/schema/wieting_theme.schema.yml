@@ -1,0 +1,5 @@
+# Schema for the theme setting configuration file of the Wieting Theme theme.
+
+wieting_theme.settings:
+  type: theme_settings
+  label: 'Wieting Theme settings'
