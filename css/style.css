@@ -7516,8 +7516,200 @@ div.views-col.col-4 {
 }
 
 */
-div.branding-block {
+/* media-queries.less */
+/* Lifted from https://gist.github.com/Mao8a/8326496
+
+Deffined on variables.less from bootstrap
+
+Large screen 		/ wide desktop 		/ screen >= 1200px
+Medium screen 		/ desktop 			/ 992px >= screen < 1200px
+Small screen 		/ tablet 			/ 768px >= screen < 992px
+Extra small screen 	/ phone 			/ 480px >= screen < 768px
+Very small screen 	/ Outdated phone 	/ screen < 480px
+
+*/
+/* Extra small screen and smaller */
+@media (max-width: 767px) {
+  .extra-small_media {
+    display: block;
+  }
+  .small_media {
+    display: none;
+  }
+  .medium_media {
+    display: none;
+  }
+  .large_media {
+    display: none;
+  }
+}
+/* Only Small screen */
+@media (min-width: 768px) and (max-width: 991px) {
+  .extra-small_media {
+    display: none;
+  }
+  .small_media {
+    display: block;
+  }
+  .medium_media {
+    display: none;
+  }
+  .large_media {
+    display: none;
+  }
+}
+/* Only Medium screen */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .extra-small_media {
+    display: none;
+  }
+  .small_media {
+    display: none;
+  }
+  .medium_media {
+    display: block;
+  }
+  .large_media {
+    display: none;
+  }
+}
+/* Large screen & Biger */
+@media (min-width: 1200px) {
+  .extra-small_media {
+    display: none;
+  }
+  .small_media {
+    display: none;
+  }
+  .medium_media {
+    display: none;
+  }
+  .large_media {
+    display: block;
+  }
+}
+/*
+
+.filter-wrapper {
+  display: none;
+}
+
+#edit-contact,
+#edit-user-picture-wrapper {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+legend {
+  margin-bottom: 0;
+}
+
+select#edit-field-has-partner {
+  margin-bottom: 5px;
+}
+
+div#edit-actions {
+  margin-top: 15px;
+}
+
+*/
+ul.nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+ul.nav li.dropdown ul.dropdown-menu {
+  margin-top: 0;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  padding: 0px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown-submenu > a:after {
+  content: "\e080";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+.navbar-nav li:last-child > .dropdown-menu {
+  left: auto;
+  right: 0px;
+}
+.navbar-nav li:last-child > .dropdown-menu a {
+  text-align: right !important;
+}
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > a:after {
+  float: left;
+  content: "\e079";
+}
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > .dropdown-menu {
+  left: -100%;
+}
+a[href="/users/help-needed"] {
+  color: darkmagenta !important;
+}
+span.views-field-help-needed {
+  color: darkmagenta !important;
+}
+span.views-field-current-user {
+  font-weight: 900;
+  color: red !important;
+}
+span.views-field-hidden {
+  display: none;
+}
+span.views-field-twoD {
+  color: darkgreen;
+  font-weight: 600;
+}
+span.views-field-threeD {
+  color: orangered;
+  font-weight: 600;
+}
+.container {
   width: 100%;
+  max-width: none !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+ul.tabs--primary.nav.nav-tabs {
+  margin-bottom: 10px;
+}
+.navbar-header {
+  clear: both;
+  width: 100%;
+}
+.navbar-collapse {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 .views-view-grid.horizontal {
   width: 80%;
@@ -7526,9 +7718,99 @@ div.branding-block {
 }
 body {
   width: 100%;
+  background: url("/themes/custom/wieting_theme/images/WietingPageGradient.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+body.path-frontpage {
   background: url("/themes/custom/wieting_theme/images/BlueGradient.jpg");
   background-size: contain;
   background-repeat: repeat-x;
+}
+div.content ul.links.inline.list-inline {
+  display: block;
+  padding: 5px;
+  margin: 10px 5px;
+  border-top: 1px solid #000000;
+}
+div.announcement-block div.view-content {
+  background: #dbdecd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 3px solid #8b9663;
+  color: #000000;
+  margin: 5px 0;
+  padding: 10px;
+}
+div.show-title {
+  display: block;
+  clear: both;
+}
+div.show-title span {
+  font-size: xx-large;
+  font-weight: 700;
+}
+div.one_sheet {
+  display: inline-block;
+  width: auto;
+  vertical-align: top;
+  margin-right: 10px;
+  min-width: 185px;
+}
+div.show-right-block {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
+div.show-right-block hr {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-top: 1px solid #fff7ea;
+}
+div.field.field--name-field-performance-times,
+div.field.field--name-field-synopsis-plain,
+div.field.field--name-field-synopsis {
+  padding-bottom: 5px;
+}
+div.field.field--name-field-performance-times div.field--item {
+  font-weight: 600;
+}
+div.wieting_banner {
+  display: block;
+  width: 100%;
+  background: #8b9663;
+  color: #fff7ea;
+  padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border: 3px solid #fff7ea;
+  margin-bottom: 10px;
+}
+div.wieting_banner .large_media .site-name,
+div.wieting_banner .medium_media .site-name {
+  font-size: xx-large;
+}
+div.wieting_banner .large_media .site-info,
+div.wieting_banner .medium_media .site-info {
+  font-size: large;
+  margin-left: 30px;
+}
+div.wieting_banner .small_media .site-name {
+  font-size: xx-large;
+}
+div.wieting_banner .small_media .site-info {
+  font-size: large;
+  margin-left: 30px;
+}
+div.wieting_banner .extra-small_media .site-name {
+  font-size: small;
+}
+div.wieting_banner .extra-small_media .site-info {
+  font-size: smaller;
+  margin-left: 5px;
 }
 .img-responsive,
 .thumbnail img,
@@ -7558,66 +7840,17 @@ div.one-sheet-views-grid {
   background-repeat: repeat;
   background-position: top center;
   margin: 0 7%;
+  padding-bottom: 20px;
   text-align: center;
 }
-div.views-view-grid.horizontal {
-  display: block;
-  margin: 0 auto;
-  padding: 20px 0;
-  width: 90%;
-  text-align: center;
-}
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.clearfix div.views-row.clearfix,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.dl-horizontal dd div.views-row.dl-horizontal dd,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.container div.views-row.container,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.container-fluid div.views-row.container-fluid,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.row div.views-row.row,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.form-horizontal .form-group div.views-row.form-horizontal .form-group,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.btn-toolbar div.views-row.btn-toolbar,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.btn-group-vertical > .btn-group div.views-row.btn-group-vertical > .btn-group,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.nav div.views-row.nav,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.navbar div.views-row.navbar,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.navbar-header div.views-row.navbar-header,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.navbar-collapse div.views-row.navbar-collapse,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.pager div.views-row.pager,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.panel-body div.views-row.panel-body,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.modal-header div.views-row.modal-header,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.modal-footer div.views-row.modal-footer,
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.filter-wrapper div.views-row.filter-wrapper {
+div.views-row.one-sheet-element {
   display: inline-block;
-  clear: right !important;
-  float: left;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 780px;
-  width: 188px !important;
+  text-align: center;
 }
-div.views-row.clearfix.row-1,
-div.views-row.dl-horizontal dd.row-1,
-div.views-row.container.row-1,
-div.views-row.container-fluid.row-1,
-div.views-row.row.row-1,
-div.views-row.form-horizontal .form-group.row-1,
-div.views-row.btn-toolbar.row-1,
-div.views-row.btn-group-vertical > .btn-group.row-1,
-div.views-row.nav.row-1,
-div.views-row.navbar.row-1,
-div.views-row.navbar-header.row-1,
-div.views-row.navbar-collapse.row-1,
-div.views-row.pager.row-1,
-div.views-row.panel-body.row-1,
-div.views-row.modal-header.row-1,
-div.views-row.modal-footer.row-1,
-div.views-row.filter-wrapper.row-1 {
-  margin-left: auto;
+div.views-field.views-field-field-one-sheet div.field-content a img.img-responsive {
+  height: 270px;
 }
-div.views-col {
-  float: left;
-  margin: auto;
-  width: 188px;
-}
-div.views-field.views-field-field-show-dates,
+div.views-field.views-field-field-performance-times,
 div.views-field.views-field-title {
   text-align: center;
   background: antiquewhite;
@@ -7627,17 +7860,74 @@ div.views-field.views-field-title {
   border-radius: 5px;
   margin: 6px 3px;
 }
-header#navbar {
-  display: none;
+div.marquee-foundation {
+  display: block;
+  width: 100%;
+  background: url("/themes/custom/wieting_theme/images/WietingSteps.png");
+  background-size: cover;
+  color: #000000;
+  font-weight: 600;
+  font-size: x-large;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 18px;
+  text-align: center;
 }
+div.view.view-profiles.view-id-profiles div.view-content div.one-sheet-views-grid {
+  background: none;
+  text-align: left;
+}
+.navbar-default {
+  background: none;
+  border: none;
+}
+.navbar {
+  margin-bottom: 0;
+  min-height: 20px;
+}
+nav#block-primarylinks {
+  display: block;
+  float: left;
+  width: 75%;
+  height: 30px;
+}
+nav#block-wieting-theme-account-menu {
+  display: inline-block;
+  float: right;
+  height: 30px;
+}
+.nav li a {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  float: left;
+}
+ul.menu.nav.navbar-nav.navbar-right {
+  float: right !important;
+  margin-right: 0;
+}
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+div.taxonomy-term-view {
+  background: transparent !important;
+}
+.calendar-calendar div.calendar {
+  background-color: #fff;
+  border: solid 1px #ddd;
+  text-align: left;
+  margin: 0 0.25em 0.25em 0;
+  width: 96%;
+  float: right;
+  clear: both;
+}
+/*--- Banner
+
 a.logo.navbar-btn.pull-left img {
   width: 100%;
-}
-/*-- Front page One Sheet grid
-
-.img-responsive {
-  margin-left: auto;
-  margin-right: auto;
 }
 
 //--- Page

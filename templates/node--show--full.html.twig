@@ -69,7 +69,7 @@
 {# kint(_context|keys) }}
 {{ kint(_context['node']|keys) }}
 {{ kint(_context['content']|keys) }}
-{{ kint(content.field_show_dates) #}
+{{ kint(content.field_performance_times) #}
 
 {%
   set classes = [
@@ -81,17 +81,21 @@
     'clearfix',
   ]
 %}
+
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
+  <div class="show-title">
+    {{ title_prefix }}
+    {{ label }}
+    {# if not page %}
+      <h2{{ title_attributes }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% endif #}
+    {{ title_suffix }}
+  </div>
 
-  {% if display_submitted %}
+  {# if display_submitted %}
     <footer>
       {{ author_picture }}
       <div{{ author_attributes.addClass('author') }}>
@@ -99,26 +103,30 @@
         {{ metadata }}
       </div>
     </footer>
-  {% endif %}
+  {% endif #}
 
-  <div{{ content_attributes.addClass('content') }}>
+  <div {{ content_attributes.addClass('content') }}>
     {# content #}
     <div class="show_details">
       <div class="one_sheet">
         {{ content.field_one_sheet }}
         {{ content.field_type }}
       </div>
-      <div class="remaining_details">
-        {# content|without('field_one_sheet') #}
-        {{ content.field_show_dates }}
+      <div class="show-right-block">
         <hr/>
-        {{ content.field_synopsis }}
-        <hr/>
-        {{ content.field_show_rating }}
-        {{ content.field_running_time }}
-        <br/>
-        {{ content.field_show_official_site }}
-        {{ content.field_imdb }}
+        <div class="remaining_details">
+          {# content|without('field_one_sheet') #}
+          {{ content.field_performance_times }}
+          <hr/>
+          {{ content.field_synopsis_plain }}
+          {{ content.field_synopsis }}
+          <hr/>
+          {{ content.field_show_rating }}
+          {{ content.field_running_time }}
+          <br/>
+          {{ content.field_show_official_site }}
+          {{ content.field_imdb }}
+        </div>
       </div>
     </div>
   </div>

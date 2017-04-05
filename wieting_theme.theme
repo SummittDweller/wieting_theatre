@@ -5,3 +5,12 @@
  *
  * Place your custom PHP code in this file.
  */
+
+/**
+ * Implements hook_preprocess_views_view_field().
+ */
+function wieting_theme_preprocess_views_view_field(&$variables) {
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+  $username = $user->get('name')->value;
+  $variables['user_names'] = explode(' ', $username);
+}

@@ -20,10 +20,218 @@
   border-radius: @radius;
 }
 
+//--- Bootstrap built-in @media queries -----------------------
+
+/* media-queries.less */
+/* Lifted from https://gist.github.com/Mao8a/8326496
+
+Deffined on variables.less from bootstrap
+
+Large screen 		/ wide desktop 		/ screen >= 1200px
+Medium screen 		/ desktop 			/ 992px >= screen < 1200px
+Small screen 		/ tablet 			/ 768px >= screen < 992px
+Extra small screen 	/ phone 			/ 480px >= screen < 768px
+Very small screen 	/ Outdated phone 	/ screen < 480px
+
+*/
+
+/* Extra small screen and smaller */
+@media (max-width: @screen-xs-max) {
+  .extra-small_media { display: block; }
+  .small_media { display: none; }
+  .medium_media { display: none; }
+  .large_media { display: none; }
+}
+
+/* Only Small screen */
+@media (min-width: @screen-sm) and (max-width: @screen-sm-max) {
+  .extra-small_media { display: none; }
+  .small_media { display: block; }
+  .medium_media { display: none; }
+  .large_media { display: none; }
+}
+
+/* Only Medium screen */
+@media (min-width: @screen-md) and (max-width: @screen-md-max) {
+  .extra-small_media { display: none; }
+  .small_media { display: none; }
+  .medium_media { display: block; }
+  .large_media { display: none; }
+}
+
+/* Large screen & Biger */
+@media (min-width: @screen-lg) {
+  .extra-small_media { display: none; }
+  .small_media { display: none; }
+  .medium_media { display: none; }
+  .large_media { display: block; }
+}
+
 //--- Implementations ----------------------------------------------------//
 
-div.branding-block {
+//-- user edit form... hide old stuff!
+/*
+
+.filter-wrapper {
+  display: none;
+}
+
+#edit-contact,
+#edit-user-picture-wrapper {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+legend {
+  margin-bottom: 0;
+}
+
+select#edit-field-has-partner {
+  margin-bottom: 5px;
+}
+
+div#edit-actions {
+  margin-top: 15px;
+}
+
+*/
+
+//-- dropdown menu -- lifted from the CSS portion of http://jeromejaglale.com/doc/drupal7/bootstrap_menu_dropdown_over, and
+//                    from https://knackforge.com/blog/pathirakaliappan/create-multi-level-bootstrap-menu-in-Drupal-8
+
+ul.nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+
+ul.nav li.dropdown ul.dropdown-menu {
+  margin-top: 0;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  padding: 0px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu > a:after {
+  content: "\e080";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+
+.navbar-nav li:last-child > .dropdown-menu {
+  left: auto;
+  right: 0px;
+}
+
+.navbar-nav li:last-child > .dropdown-menu a {
+  text-align: right !important;
+}
+
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > a:after {
+  float: left;
+  content: "\e079";
+}
+
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > .dropdown-menu {
+  left: -100%;
+}
+
+//-- help-needed
+
+a[href="/users/help-needed"] {
+  color: darkmagenta !important;
+}
+
+span.views-field-help-needed {
+  color: darkmagenta !important;
+}
+
+//-- highlight current user
+
+span.views-field-current-user {
+  font-weight: 900;
+  color: red !important;
+}
+
+//-- formats
+
+span.views-field-hidden {
+  display: none;
+}
+
+span.views-field-twoD {
+  color: darkgreen;
+  font-weight: 600;
+}
+
+span.views-field-threeD {
+  color: orangered;
+  font-weight: 600;
+}
+
+//-- .container
+
+.container {
   width: 100%;
+  max-width: none !important;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+//-- nav-tabs (admin tabs near top of screen)
+
+ul.tabs--primary.nav.nav-tabs {
+  margin-bottom: 10px;
+}
+
+//-- navigation region (top-most)
+
+.navbar-header {
+  clear: both;
+  width: 100%;
+}
+
+//-- .navbar-collapse
+
+.navbar-collapse {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .views-view-grid.horizontal {
@@ -32,11 +240,124 @@ div.branding-block {
   horiz-align: center;
 }
 
+//-- body... frontpage and all others
+
 body {
   width: 100%;
+  background: url("/themes/custom/wieting_theme/images/WietingPageGradient.png");
+  background-size: contain;
+  background-repeat: repeat-x;
+}
+
+body.path-frontpage {
   background: url("/themes/custom/wieting_theme/images/BlueGradient.jpg");
   background-size: contain;
   background-repeat: repeat-x;
+}
+
+//-- content view counters
+
+div.content ul.links.inline.list-inline {
+  display: block;
+  padding: 5px;
+  margin: 10px 5px;
+  border-top: 1px solid @dark;
+}
+
+//-- announcement-block
+
+div.announcement-block div.view-content {
+  background: lighten(@secondary, 25%);
+  .border-radius(5px);
+  border: 3px solid @primary;
+  color: @dark;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+//-- show/* content detail pages
+
+div.show-title {
+  display: block;
+  clear: both;
+}
+
+div.show-title span {
+  font-size: xx-large;
+  font-weight: 700;
+}
+
+div.one_sheet {
+  display: inline-block;
+  width: auto;
+  vertical-align: top;
+  margin-right: 10px;
+  min-width: 185px;
+}
+
+div.show-right-block {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
+
+div.show-right-block hr {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-top: 1px solid @p-border;
+}
+
+div.field.field--name-field-performance-times,
+div.field.field--name-field-synopsis-plain,
+div.field.field--name-field-synopsis {
+  padding-bottom: 5px;
+}
+
+div.field.field--name-field-performance-times div.field--item {
+  font-weight: 600;
+}
+
+//-- wieting_banner
+
+div.wieting_banner {
+  display: block;
+  width: 100%;
+  background: @primary;
+  color: contrast(@primary, @lite, @dark);
+  padding: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  .border-radius(10px);
+  border: 3px solid @p-border;
+  margin-bottom: 10px;
+}
+
+div.wieting_banner .large_media .site-name,
+div.wieting_banner .medium_media .site-name {
+  font-size: xx-large;
+}
+
+div.wieting_banner .large_media .site-info,
+div.wieting_banner .medium_media .site-info {
+  font-size: large;
+  margin-left: 30px;
+}
+
+div.wieting_banner .small_media .site-name {
+  font-size: xx-large;
+}
+
+div.wieting_banner .small_media .site-info {
+  font-size: large;
+  margin-left: 30px;
+}
+
+div.wieting_banner .extra-small_media .site-name {
+  font-size: small;
+}
+
+div.wieting_banner .extra-small_media .site-info {
+  font-size: smaller;
+  margin-left: 5px;
 }
 
 //--- One sheet grid with banner
@@ -70,39 +391,20 @@ div.one-sheet-views-grid {
   background-repeat: repeat;
   background-position: top center;
   margin: 0 7%;
+  padding-bottom: 20px;
   text-align: center;
 }
 
-div.views-view-grid.horizontal {
-  display: block;
-  margin: 0 auto;
-  padding: 20px 0;
-  width: 90%;
-  text-align: center;
-}
-
-div.one-sheet-views-grid div.views-view-grid.horizontal.cols-1.clearfix div.views-row.clearfix {
+div.views-row.one-sheet-element {
   display: inline-block;
-  clear: right !important;
-  float: left;
-  margin-bottom: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 780px;
-  width: 188px !important;
+  text-align: center;
 }
 
-div.views-row.clearfix.row-1 {
-  margin-left: auto;
+div.views-field.views-field-field-one-sheet div.field-content a img.img-responsive {
+  height: 270px;
 }
 
-div.views-col {
-  float: left;
-  margin: auto;
-  width: 188px;
-}
-
-div.views-field.views-field-field-show-dates,
+div.views-field.views-field-field-performance-times,
 div.views-field.views-field-title {
   text-align: center;
   background: @grid-background;
@@ -111,23 +413,97 @@ div.views-field.views-field-title {
   margin: 6px 3px;
 }
 
-//-- Remove the header#navbar
-
-header#navbar {
-  display: none;
+div.marquee-foundation {
+  display: block;
+  width: 100%;
+  background: url("/themes/custom/wieting_theme/images/WietingSteps.png");
+  background-size: cover;
+  color: @dark;
+  font-weight: 600;
+  font-size: x-large;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 18px;
+  text-align: center;
 }
 
-    //--- Banner
+//-- volunteer profile
 
-  a.logo.navbar-btn.pull-left img {
-    width: 100%;
-  }
+div.view.view-profiles.view-id-profiles div.view-content div.one-sheet-views-grid {
+  background: none;
+  text-align: left;
+}
 
-/*-- Front page One Sheet grid
+//-- .navbar-default
 
-.img-responsive {
-  margin-left: auto;
-  margin-right: auto;
+.navbar-default {
+  background: none;
+  border: none;
+}
+
+.navbar {
+  margin-bottom: 0;
+  min-height: 20px;
+}
+
+//-- Main menu
+
+nav#block-primarylinks {
+  display: block;
+  float: left;
+  width: 75%;
+  height: 30px;
+}
+
+nav#block-wieting-theme-account-menu {
+  display: inline-block;
+  float: right;
+  height: 30px;
+}
+
+.nav li a {
+  position: relative;
+  display: block;
+  padding: 5px 10px;
+  float: left;
+}
+
+ul.menu.nav.navbar-nav.navbar-right {
+  float: right !important;
+  margin-right: 0;
+}
+
+//-- Views top-of-page controls
+
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+//-- Taxonomy term pages
+
+div.taxonomy-term-view {
+  background: transparent !important;
+}
+
+//--- Calendars
+
+.calendar-calendar div.calendar {
+  background-color: #fff;
+  border: solid 1px #ddd;
+  text-align: left;
+  margin: 0 0.25em 0.25em 0;
+  width: 96%;
+  float: right;
+  clear: both;
+}
+
+/*--- Banner
+
+a.logo.navbar-btn.pull-left img {
+  width: 100%;
 }
 
 //--- Page
