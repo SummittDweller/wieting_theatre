@@ -69,6 +69,152 @@ Very small screen 	/ Outdated phone 	/ screen < 480px
 
 //--- Implementations ----------------------------------------------------//
 
+//-- user edit form... hide old stuff!
+/*
+
+.filter-wrapper {
+  display: none;
+}
+
+#edit-contact,
+#edit-user-picture-wrapper {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+legend {
+  margin-bottom: 0;
+}
+
+select#edit-field-has-partner {
+  margin-bottom: 5px;
+}
+
+div#edit-actions {
+  margin-top: 15px;
+}
+
+*/
+
+//-- dropdown menu -- lifted from the CSS portion of http://jeromejaglale.com/doc/drupal7/bootstrap_menu_dropdown_over, and
+//                    from https://knackforge.com/blog/pathirakaliappan/create-multi-level-bootstrap-menu-in-Drupal-8
+
+ul.nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+
+ul.nav li.dropdown ul.dropdown-menu {
+  margin-top: 0;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  padding: 0px;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-submenu > a:after {
+  content: "\e080";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+  float: none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+
+.navbar-nav li:last-child > .dropdown-menu {
+  left: auto;
+  right: 0px;
+}
+
+.navbar-nav li:last-child > .dropdown-menu a {
+  text-align: right !important;
+}
+
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > a:after {
+  float: left;
+  content: "\e079";
+}
+
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > .dropdown-menu {
+  left: -100%;
+}
+
+//-- help-needed
+
+a[href="/users/help-needed"] {
+  color: darkmagenta !important;
+}
+
+span.views-field-help-needed {
+  color: darkmagenta !important;
+}
+
+//-- highlight current user
+
+span.views-field-current-user {
+  font-weight: 900;
+  color: red !important;
+}
+
+//-- formats
+
+span.views-field-hidden {
+  display: none;
+}
+
+span.views-field-PM {
+  color: dodgerblue;
+  font-weight: 600;
+  font-size: 110%;
+}
+
+span.views-field-AM {
+  color: deeppink;
+  font-weight: 600;
+  font-size: 110%;
+}
+
+span.views-field-twoD {
+  color: darkgreen;
+  font-weight: 600;
+  font-size: 110%;
+}
+
+span.views-field-threeD {
+  color: darkblue;
+  font-weight: 600;
+  font-size: 110%;
+}
+
 //-- .container
 
 .container {
@@ -78,6 +224,12 @@ Very small screen 	/ Outdated phone 	/ screen < 480px
   margin-left: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+
+//-- nav-tabs (admin tabs near top of screen)
+
+ul.tabs--primary.nav.nav-tabs {
+  margin-bottom: 10px;
 }
 
 //-- navigation region (top-most)
@@ -117,15 +269,42 @@ body.path-frontpage {
   background-repeat: repeat-x;
 }
 
+//-- content view counters
+
+div.content ul.links.inline.list-inline {
+  display: block;
+  padding: 5px;
+  margin: 10px 5px;
+  border-top: 1px solid @dark;
+}
+
 //-- announcement-block
 
-div.announcement-block div.view-content div.one-sheet-views-grid {
+div.announcement-block div.view-content {
   background: lighten(@secondary, 25%);
   .border-radius(5px);
   border: 3px solid @primary;
   color: @dark;
   margin: 5px 0;
   padding: 10px;
+}
+
+//-- active-volunteer-header
+
+div.active-volunteer-header {
+  display: block;
+  background: lighten(@secondary, 25%);
+  .border-radius(5px);
+  border: 2px solid @primary;
+  color: @dark;
+  margin: 5px 0;
+  padding: 10px;
+}
+
+//-- calendar-calendar
+
+div.calendar-calendar {
+  margin-bottom: 10px;
 }
 
 //-- show/* content detail pages
@@ -170,7 +349,6 @@ div.field.field--name-field-performance-times div.field--item {
   font-weight: 600;
 }
 
-
 //-- wieting_banner
 
 div.wieting_banner {
@@ -182,6 +360,7 @@ div.wieting_banner {
   font-family: Georgia, "Times New Roman", Times, serif;
   .border-radius(10px);
   border: 3px solid @p-border;
+  margin-bottom: 10px;
 }
 
 div.wieting_banner .large_media .site-name,
@@ -257,13 +436,22 @@ div.views-field.views-field-field-one-sheet div.field-content a img.img-responsi
   height: 270px;
 }
 
-div.views-field.views-field-field-show-dates,
-div.views-field.views-field-title {
+div.views-field.views-field-field-performance-times,
+div.views-field.views-field-title,
+div.views-field-field-show-rating {
   text-align: center;
   background: @grid-background;
   color: contrast(@grid-background, @lite, @dark);
   .border-radius(5px);
   margin: 6px 3px;
+}
+
+div.views-field-field-show-rating {
+  margin-top: 0;
+}
+
+div.views-field.views-field-field-performance-times {
+  margin-bottom: 1px;
 }
 
 div.marquee-foundation {
@@ -280,6 +468,13 @@ div.marquee-foundation {
   text-align: center;
 }
 
+//-- volunteer profile
+
+div.view.view-profiles.view-id-profiles div.view-content div.one-sheet-views-grid {
+  background: none;
+  text-align: left;
+}
+
 //-- .navbar-default
 
 .navbar-default {
@@ -289,12 +484,29 @@ div.marquee-foundation {
 
 .navbar {
   margin-bottom: 0;
+  min-height: 20px;
 }
 
 //-- Main menu
 
-.navbar-nav li a {
+nav#block-primarylinks {
+  display: block;
+  float: left;
+  width: 75%;
+  height: 30px;
+}
+
+nav#block-wieting-theme-account-menu {
+  display: inline-block;
+  float: right;
+  height: 30px;
+}
+
+.nav li a {
+  position: relative;
+  display: block;
   padding: 5px 10px;
+  float: left;
 }
 
 ul.menu.nav.navbar-nav.navbar-right {
@@ -302,7 +514,32 @@ ul.menu.nav.navbar-nav.navbar-right {
   margin-right: 0;
 }
 
+//-- Views top-of-page controls
 
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+//-- Taxonomy term pages
+
+div.taxonomy-term-view {
+  background: transparent !important;
+}
+
+//--- Calendars
+
+.calendar-calendar div.calendar {
+  background-color: #fff;
+  border: solid 1px #ddd;
+  text-align: left;
+  margin: 0 0.25em 0.25em 0;
+  width: 96%;
+  float: right;
+  clear: both;
+}
 
 /*--- Banner
 

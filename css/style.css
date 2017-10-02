@@ -7588,6 +7588,120 @@ Very small screen 	/ Outdated phone 	/ screen < 480px
     display: block;
   }
 }
+/*
+
+.filter-wrapper {
+  display: none;
+}
+
+#edit-contact,
+#edit-user-picture-wrapper {
+  display: none;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+legend {
+  margin-bottom: 0;
+}
+
+select#edit-field-has-partner {
+  margin-bottom: 5px;
+}
+
+div#edit-actions {
+  margin-top: 15px;
+}
+
+*/
+ul.nav li.dropdown:hover ul.dropdown-menu {
+  display: block;
+}
+ul.nav li.dropdown ul.dropdown-menu {
+  margin-top: 0;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu > .dropdown-menu {
+  top: 0;
+  left: 100%;
+  padding: 0px;
+}
+.dropdown-submenu:hover > .dropdown-menu {
+  display: block;
+}
+.dropdown-submenu > a:after {
+  content: "\e080";
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-size: 10px;
+  float: right;
+  margin-top: 5px;
+}
+.dropdown-submenu:hover > a:after {
+  border-left-color: #fff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left > .dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  -webkit-border-radius: 6px 0 6px 6px;
+  -moz-border-radius: 6px 0 6px 6px;
+  border-radius: 6px 0 6px 6px;
+}
+.navbar-nav li:last-child > .dropdown-menu {
+  left: auto;
+  right: 0px;
+}
+.navbar-nav li:last-child > .dropdown-menu a {
+  text-align: right !important;
+}
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > a:after {
+  float: left;
+  content: "\e079";
+}
+.navbar-nav li:last-child > .dropdown-menu .dropdown-submenu > .dropdown-menu {
+  left: -100%;
+}
+a[href="/users/help-needed"] {
+  color: darkmagenta !important;
+}
+span.views-field-help-needed {
+  color: darkmagenta !important;
+}
+span.views-field-current-user {
+  font-weight: 900;
+  color: red !important;
+}
+span.views-field-hidden {
+  display: none;
+}
+span.views-field-PM {
+  color: dodgerblue;
+  font-weight: 600;
+  font-size: 110%;
+}
+span.views-field-AM {
+  color: deeppink;
+  font-weight: 600;
+  font-size: 110%;
+}
+span.views-field-twoD {
+  color: darkgreen;
+  font-weight: 600;
+  font-size: 110%;
+}
+span.views-field-threeD {
+  color: darkblue;
+  font-weight: 600;
+  font-size: 110%;
+}
 .container {
   width: 100%;
   max-width: none !important;
@@ -7595,6 +7709,9 @@ Very small screen 	/ Outdated phone 	/ screen < 480px
   margin-left: auto;
   padding-left: 20px;
   padding-right: 20px;
+}
+ul.tabs--primary.nav.nav-tabs {
+  margin-bottom: 10px;
 }
 .navbar-header {
   clear: both;
@@ -7622,7 +7739,13 @@ body.path-frontpage {
   background-size: contain;
   background-repeat: repeat-x;
 }
-div.announcement-block div.view-content div.one-sheet-views-grid {
+div.content ul.links.inline.list-inline {
+  display: block;
+  padding: 5px;
+  margin: 10px 5px;
+  border-top: 1px solid #000000;
+}
+div.announcement-block div.view-content {
   background: #dbdecd;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -7631,6 +7754,20 @@ div.announcement-block div.view-content div.one-sheet-views-grid {
   color: #000000;
   margin: 5px 0;
   padding: 10px;
+}
+div.active-volunteer-header {
+  display: block;
+  background: #dbdecd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 2px solid #8b9663;
+  color: #000000;
+  margin: 5px 0;
+  padding: 10px;
+}
+div.calendar-calendar {
+  margin-bottom: 10px;
 }
 div.show-title {
   display: block;
@@ -7676,6 +7813,7 @@ div.wieting_banner {
   -moz-border-radius: 10px;
   border-radius: 10px;
   border: 3px solid #fff7ea;
+  margin-bottom: 10px;
 }
 div.wieting_banner .large_media .site-name,
 div.wieting_banner .medium_media .site-name {
@@ -7738,8 +7876,9 @@ div.views-row.one-sheet-element {
 div.views-field.views-field-field-one-sheet div.field-content a img.img-responsive {
   height: 270px;
 }
-div.views-field.views-field-field-show-dates,
-div.views-field.views-field-title {
+div.views-field.views-field-field-performance-times,
+div.views-field.views-field-title,
+div.views-field-field-show-rating {
   text-align: center;
   background: antiquewhite;
   color: #000000;
@@ -7747,6 +7886,12 @@ div.views-field.views-field-title {
   -moz-border-radius: 5px;
   border-radius: 5px;
   margin: 6px 3px;
+}
+div.views-field-field-show-rating {
+  margin-top: 0;
+}
+div.views-field.views-field-field-performance-times {
+  margin-bottom: 1px;
 }
 div.marquee-foundation {
   display: block;
@@ -7761,19 +7906,56 @@ div.marquee-foundation {
   padding: 18px;
   text-align: center;
 }
+div.view.view-profiles.view-id-profiles div.view-content div.one-sheet-views-grid {
+  background: none;
+  text-align: left;
+}
 .navbar-default {
   background: none;
   border: none;
 }
 .navbar {
   margin-bottom: 0;
+  min-height: 20px;
 }
-.navbar-nav li a {
+nav#block-primarylinks {
+  display: block;
+  float: left;
+  width: 75%;
+  height: 30px;
+}
+nav#block-wieting-theme-account-menu {
+  display: inline-block;
+  float: right;
+  height: 30px;
+}
+.nav li a {
+  position: relative;
+  display: block;
   padding: 5px 10px;
+  float: left;
 }
 ul.menu.nav.navbar-nav.navbar-right {
   float: right !important;
   margin-right: 0;
+}
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+div.taxonomy-term-view {
+  background: transparent !important;
+}
+.calendar-calendar div.calendar {
+  background-color: #fff;
+  border: solid 1px #ddd;
+  text-align: left;
+  margin: 0 0.25em 0.25em 0;
+  width: 96%;
+  float: right;
+  clear: both;
 }
 /*--- Banner
 

@@ -1,0 +1,27 @@
+{% extends "block--bare.html.twig" %}
+{#
+/**
+ * @file
+ * Theme implementation for the Wieting's ACTIVE user block.
+ *
+ * Available variables:
+ * - uid: Active user uid.
+ * - name: Active user name.
+ *
+ * @ingroup templates
+ */
+#}
+{% block content %}
+  <div class="active-user-block">
+    {# kint(content|keys) #}
+    {%  if content['name']|length > 0 %}
+      {% if content['team']|length > 0 %}
+        The ACTIVE volunteer is '{{ content['name'] }}' with a team of '{{ content['team'] }}'.
+      {% else %}
+        The ACTIVE volunteer is '{{ content['name'] }}'.
+      {% endif %}
+    {% else %}
+      The ACTIVE volunteer is NOT SET.
+    {% endif %}
+  </div>
+{% endblock %}
