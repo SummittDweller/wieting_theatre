@@ -96,7 +96,14 @@
   {% endif %}
 
   <div{{ content_attributes.addClass('content') }}>
-    {{ content }}
+    {{ content['visibility'] }}
+    {{ content['body'] }}
+    <br/>
+    {{ content['book_navigation'] }}
+    {{ content['links'] }}
+    {# <pre>
+      {{ dump(content) }}
+    </pre> #}
   </div>
 
 </article>
