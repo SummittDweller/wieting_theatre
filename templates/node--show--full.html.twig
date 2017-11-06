@@ -122,6 +122,11 @@
           {{ content.field_synopsis }}
           <hr/>
           {{ content.field_show_rating }}
+          {% if content.field_show_rating[0]['#markup'] == "R" %}
+             <div class="rated-r">Rated R: Restricted – Under 17 requires accompanying parent or adult guardian. A
+                 parent or adult guardian must accompany and remain seated with anyone under age 17.
+             </div>
+          {% endif %}
           {{ content.field_running_time }}
           <br/>
           {{ content.field_show_official_site }}

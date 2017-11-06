@@ -7962,3 +7962,7 @@ div.book-nav {
   clear: both;
   text-align: center;
 }
+div.rated-r {
+  color: darkred;
+  font-weight: bold;
+}
