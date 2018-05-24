@@ -1,0 +1,12 @@
+"wieting_theme": {
+            "type": "package",
+            "package": {
+                "name": "summittdweller/wieting_theme",
+                "type": "drupal-custom-theme",
+                "version": "1.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/SummittDweller/wieting_theme.git"
+                }
+            }
+        }
