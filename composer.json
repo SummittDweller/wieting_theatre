@@ -1,12 +1,36 @@
-"wieting_theme": {
+{
+    "name": "wieting-theme",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "summittdweller/wieting_theme",
-                "type": "drupal-custom-theme",
-                "version": "1.0",
+                "version": "dev-master",
+                "type":"drupal-custom-theme",
                 "source": {
+                    "url": "https://github.com/SummittDweller/wieting_theme.git",
                     "type": "git",
-                    "url": "https://github.com/SummittDweller/wieting_theme.git"
+                    "reference": "master"
                 }
             }
         }
+    ],
+    "require": {
+        "composer/installers": "^1.2"
+    },   
+    "extra": {
+        "installer-paths": {
+            "web/libraries/{$name}": ["type:drupal-library"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+        }
+    }
+}
