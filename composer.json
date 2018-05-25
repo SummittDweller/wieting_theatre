@@ -13,14 +13,10 @@
         {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/SummittDweller/wieting_theme.git"
         }
     ],
     "require": {
-        "drupal/bootstrap": "^3.11",
+        "drupal/bootstrap": "^3.11"
     },
     "package": {
         "name": "wieting_theme",
