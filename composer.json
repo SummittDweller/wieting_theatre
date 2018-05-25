@@ -1,13 +1,35 @@
 {
-  "type": "package",
-  "package": {
     "name": "summittdweller/wieting_theme",
-    "version": "dev-master",
-    "type":"drupal-custom-theme",
-    "source": {
-      "url": "https://github.com/SummittDweller/wieting_theme.git",
-      "type": "git",
-      "reference": "master"
+    "description": "Drupal 8 Bootstrap custom theme for the Wieting Theatre",
+    "type": "drupal-custom-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mark A. McFate",
+            "role": "Creator"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/SummittDweller/wieting_theme.git"
+        }
+    ],
+    "require": {
+        "drupal/bootstrap": "^3.11",
+    },
+    "package": {
+        "name": "wieting_theme",
+        "version": "dev-master",
+        "type":"drupal-custom-theme",
+        "source": {
+            "url": "https://github.com/SummittDweller/wieting_theme.git",
+            "type": "git",
+            "reference": "master"
+        }
     }
-  }
 }
