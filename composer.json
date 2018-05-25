@@ -1,5 +1,5 @@
 {
-    "name": "wieting_theme",
+    "name": "summittdweller/wieting_theme",
     "type": "project",
     "repositories": [
         {
@@ -11,7 +11,7 @@
             "package": {
                 "name": "wieting_theme",
                 "version": "dev-master",
-                "type":"drupal-theme",
+                "type":"drupal-custom-theme",
                 "source": {
                     "url": "https://github.com/SummittDweller/wieting_theme.git",
                     "type": "git",
@@ -28,7 +28,9 @@
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"]
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
         }
     }
 }
