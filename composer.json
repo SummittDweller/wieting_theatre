@@ -1,5 +1,5 @@
 {
-    "name": "summittdweller/wieting_theme",
+    "name": "summittservices/wieting_theme",
     "type": "project",
     "repositories": [
         {
@@ -30,7 +30,8 @@
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+            "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
+            "web/themes/custom/{$name}": ["summittservices/wieting_theme"]
         }
     }
 }
