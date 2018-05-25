@@ -3,7 +3,7 @@
   "package": {
     "name": "summittdweller/wieting_theme",
     "version": "dev-master",
-    "type":"drupal-theme",
+    "type":"drupal-custom-theme",
     "source": {
       "url": "https://github.com/SummittDweller/wieting_theme.git",
       "type": "git",
