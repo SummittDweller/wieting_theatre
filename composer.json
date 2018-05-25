@@ -1,5 +1,5 @@
 {
-    "name": "wieting-theme",
+    "name": "wieting_theme",
     "type": "project",
     "repositories": [
         {
@@ -9,8 +9,8 @@
         {
             "type": "package",
             "package": {
-                "name": "SummittDweller/wieting-theme",
-                "version": "dev-master",
+                "name": "wieting_theme",
+                "version": "1.1",
                 "type":"drupal-custom-theme",
                 "source": {
                     "url": "https://github.com/SummittDweller/wieting_theme.git",
