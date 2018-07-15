@@ -31,7 +31,7 @@ function wieting_theme_preprocess_views_view(&$variables) {
     unset($variables['active_text']);
     return;
   }
-  
+
   if (!$active = \Drupal\wieting\Plugin\Action\Common::getActiveUID( )) {
     unset($variables['active_uid']);
     unset($variables['active_name']);
@@ -39,7 +39,7 @@ function wieting_theme_preprocess_views_view(&$variables) {
     unset($variables['active_text']);
     return;
   }
-  
+
   $user = \Drupal\user\Entity\User::load($active);
   $name = $user->getAccountName( );
   $value = $user->get('field_manager_team')->getValue( );
@@ -47,24 +47,24 @@ function wieting_theme_preprocess_views_view(&$variables) {
   $first = $team[0];
   $special = array('!', '*', '~');
   if (in_array($first, $special) || ($team === $name)) { $team = NULL; }
-  
+
   if (strlen($name) < 1) {
     $text = "The ACTIVE volunteer is NOT SET";
   } else {
     $text = "The ACTIVE volunteer is $name";
   }
-  
+
   if ($team) {
     $text .= " with a team of $team.";
   } else {
     $text .= ".";
   }
-  
+
   $variables['active_uid'] = $active;
   $variables['active_name'] = $name;
   $variables['active_team'] = $team;
   $variables['active_text'] = $text;
-  
+
 }
 
 
@@ -77,7 +77,7 @@ function wieting_theme_views_pre_render(\Drupal\views\ViewExecutable &$view) {
   // drupal_set_message(__FUNCTION__ . " called.  View ID is: $vid.", 'info');
   if ($vid == 'manage_performances') {
     if ($buffer = \Drupal\wieting\Plugin\Action\Common::getBufferedText()) {
-      \Drupal\wieting\Plugin\Action\Common::sendMail('performance_change', $buffer, 'toledowieting@gmail.com', 'toledowieting@gmail.com');
+      \Drupal\wieting\Plugin\Action\Common::sendMail('performance_change', $buffer, 'Mark McFate', 'mark.mcfate@icloud.com');
       \Drupal\wieting\Plugin\Action\Common::setBufferedText("");
     }
   }
@@ -95,13 +95,13 @@ function wieting_theme_preprocess_block(&$variables) {
     $user = \Drupal\user\Entity\User::load($uid);
     $name = $user->getAccountName( );
     $value = $user->get('field_manager_team')->getValue( );
-  
+
     $team = $value[0]['value'];
     $first = $team[0];
     $special = array('!', '*', '~');
-  
+
     if (in_array($first, $special) || ($team === $name)) { $team = NULL; }
-  
+
     $variables['elements']['content']['uid'] = $uid;
     $variables['elements']['content']['name'] = $name;
     $variables['elements']['content']['team'] = $team;
@@ -109,4 +109,3 @@ function wieting_theme_preprocess_block(&$variables) {
 }
 
  */
-
