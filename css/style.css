@@ -7970,9 +7970,11 @@ div.rated-r {
 /* Horizontal scrolling text per https://www.html.am/html-codes/marquees/scrolling-text.cfm */
 
 .scroll-left {
-  height: 16px;
+  height: 24px;
   overflow: hidden;
   position: relative;
+  font-size: 18px;
+  color: red;
 }
 
 .scroll-left p {
