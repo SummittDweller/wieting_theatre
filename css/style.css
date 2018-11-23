@@ -8020,11 +8020,11 @@ div.rated-r {
 }
 
 
-span .views-field-PM {
-  color: red;
-  text-align: center;
+span.views-field-PM p {
+  color: red !important;
+  text-align: center !important;
 }
 
-span .views-field-PM a {
+span.views-field-PM a {
   color: red;
 }
